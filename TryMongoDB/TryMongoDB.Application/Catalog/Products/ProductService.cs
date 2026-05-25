@@ -53,6 +53,35 @@ public sealed class ProductService(
         return ApplicationResult<ProductDto>.Success(product.ToDto(productVariants));
     }
 
+    public async Task<ApplicationResult<ProductVariantDto>> AddVariantAsync(
+        string productId,
+        CreateProductVariantRequest request,
+        CancellationToken cancellationToken)
+    {
+        if (await products.GetByIdAsync(productId, cancellationToken) is null)
+        {
+            return ApplicationResult<ProductVariantDto>.Failure(ApplicationErrorType.NotFound, "Product was not found.");
+        }
+
+        if (await variants.ExistsBySkuAsync(request.Sku, cancellationToken))
+        {
+            return ApplicationResult<ProductVariantDto>.Failure(ApplicationErrorType.Conflict, $"Product variant SKU '{request.Sku}' already exists.");
+        }
+
+        var variant = ProductVariant.Create(
+            productId,
+            request.Sku,
+            request.Price,
+            request.Currency,
+            request.StockQuantity,
+            request.Attributes,
+            request.IsActive);
+
+        await variants.AddAsync(variant, cancellationToken);
+
+        return ApplicationResult<ProductVariantDto>.Success(variant.ToDto(), 201);
+    }
+
     public async Task<ApplicationResult<ProductDto>> GetByIdAsync(string id, CancellationToken cancellationToken)
     {
         var product = await products.GetByIdAsync(id, cancellationToken);

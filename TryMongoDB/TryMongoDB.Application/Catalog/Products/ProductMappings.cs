@@ -17,7 +17,7 @@ internal static class ProductMappings
             product.CreatedAtUtc,
             product.UpdatedAtUtc);
 
-    private static ProductVariantDto ToDto(this ProductVariant variant) =>
+    public static ProductVariantDto ToDto(this ProductVariant variant) =>
         new(
             variant.Id,
             variant.Sku,

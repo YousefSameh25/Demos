@@ -74,6 +74,9 @@ public sealed class MongoProductVariantRepository(MongoCatalogContext context) :
             .Find(variant => variant.Sku == sku.Trim() && variant.ProductId != productId)
             .AnyAsync(cancellationToken);
 
+    public Task AddAsync(ProductVariant variant, CancellationToken cancellationToken) =>
+        context.ProductVariants.InsertOneAsync(variant.ToDocument(), cancellationToken: cancellationToken);
+
     public Task AddManyAsync(IReadOnlyCollection<ProductVariant> variants, CancellationToken cancellationToken)
     {
         if (variants.Count == 0)

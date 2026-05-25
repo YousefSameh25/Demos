@@ -16,4 +16,15 @@ public sealed class ProductsController(IProductService products) : ControllerBas
 
         return StatusCode(result.StatusCode, result);
     }
+
+    [HttpPost("{productId}/variants")]
+    public async Task<IActionResult> AddVariant(
+        string productId,
+        CreateProductVariantRequest request,
+        CancellationToken cancellationToken)
+    {
+        var result = await products.AddVariantAsync(productId, request, cancellationToken);
+
+        return StatusCode(result.StatusCode, result);
+    }
 }
