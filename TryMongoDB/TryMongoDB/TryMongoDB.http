@@ -4,3 +4,22 @@ GET {{TryMongoDB_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+@existingProductId = replace-with-existing-product-id
+
+POST {{TryMongoDB_HostAddress}}/api/products/{{existingProductId}}/variants
+Content-Type: application/json
+
+{
+  "sku": "IPHONE15-BLK-256",
+  "price": 1099.00,
+  "currency": "USD",
+  "stockQuantity": 25,
+  "attributes": {
+    "color": "Black",
+    "storage": "256GB"
+  },
+  "isActive": true
+}
+
+###
