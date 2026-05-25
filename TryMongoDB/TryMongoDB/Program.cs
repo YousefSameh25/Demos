@@ -1,4 +1,8 @@
 
+using TryMongoDB.Application;
+using TryMongoDB.ExceptionHandling;
+using TryMongoDB.Infrastructure;
+
 namespace TryMongoDB
 {
     public class Program
@@ -9,6 +13,9 @@ namespace TryMongoDB
 
             // Add services to the container.
 
+            builder.Services.AddApplication();
+            builder.Services.AddInfrastructure(builder.Configuration);
+            builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -17,6 +24,8 @@ namespace TryMongoDB
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
+            app.UseExceptionHandler(_ => { });
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
