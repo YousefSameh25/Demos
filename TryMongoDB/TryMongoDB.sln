@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryMongoDB", "TryMongoDB\TryMongoDB.csproj", "{AA3FCB65-06CF-414D-9FB9-6BB80B9C6731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryMongoDB.Application", "TryMongoDB.Application\TryMongoDB.Application.csproj", "{98E34C60-3A2D-0B54-8034-7CCE4522F4EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryMongoDB.Infrastructure", "TryMongoDB.Infrastructure\TryMongoDB.Infrastructure.csproj", "{68065198-0314-4BB7-EFF6-B0E88939C84A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryMongoDB.Domain", "TryMongoDB.Domain\TryMongoDB.Domain.csproj", "{A93D0276-B726-5687-3E40-504AB186C545}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{AA3FCB65-06CF-414D-9FB9-6BB80B9C6731}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA3FCB65-06CF-414D-9FB9-6BB80B9C6731}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA3FCB65-06CF-414D-9FB9-6BB80B9C6731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98E34C60-3A2D-0B54-8034-7CCE4522F4EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98E34C60-3A2D-0B54-8034-7CCE4522F4EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98E34C60-3A2D-0B54-8034-7CCE4522F4EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98E34C60-3A2D-0B54-8034-7CCE4522F4EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68065198-0314-4BB7-EFF6-B0E88939C84A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68065198-0314-4BB7-EFF6-B0E88939C84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68065198-0314-4BB7-EFF6-B0E88939C84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68065198-0314-4BB7-EFF6-B0E88939C84A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A93D0276-B726-5687-3E40-504AB186C545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A93D0276-B726-5687-3E40-504AB186C545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A93D0276-B726-5687-3E40-504AB186C545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A93D0276-B726-5687-3E40-504AB186C545}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

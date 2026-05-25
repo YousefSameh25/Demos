@@ -10,4 +10,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TryMongoDB.Application\TryMongoDB.Application.csproj" />
+    <ProjectReference Include="..\TryMongoDB.Infrastructure\TryMongoDB.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
