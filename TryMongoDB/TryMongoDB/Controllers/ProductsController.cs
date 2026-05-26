@@ -4,7 +4,7 @@ using TryMongoDB.Application.Catalog.Products;
 namespace TryMongoDB.Controllers;
 
 [ApiController]
-[Route("api/products")]
+[Route("api/[controller]")]
 public sealed class ProductsController(IProductService products) : ControllerBase
 {
     [HttpPost]

@@ -4,7 +4,7 @@ using TryMongoDB.Application.Catalog.Categories;
 namespace TryMongoDB.Controllers;
 
 [ApiController]
-[Route("api/categories")]
+[Route("api/[controller]")]
 public sealed class CategoriesController(ICategoryService categories) : ControllerBase
 {
     [HttpPost]
